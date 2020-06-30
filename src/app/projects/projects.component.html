@@ -1,0 +1,27 @@
+
+  
+<div  role="main" class="content">
+    <div class="card-container container-fluid" style="margin-top: 10%;">
+      <header>
+        <h1> Our Projects </h1>
+    </header>
+        <div class="row" class="content">
+          <div class="col-sm-3 card projectCard" target="_blank" rel="noopener" *ngFor="let project of projectDetails;let i=index;">
+            <button class="buttonCard">
+              <h3 style="text-align: center;"><span> {{ project.type }} </span>
+              </h3>
+            </button>
+            <div class="row"> 
+                <div class="col-sm-6" *ngFor="let p1 of project.projects;let j=index;">
+                    <div class="container" (click)="openDialog(p1,i,j)">
+                      <img src="{{p1.imgname}}" alt="Avatar" class="imgClass">
+                      <div class="overlay">
+                        <div class="text"> {{ p1.name }} </div>
+                      </div>
+                    </div>
+                </div>
+            </div>   
+          </div>
+        </div>
+      </div>
+</div>

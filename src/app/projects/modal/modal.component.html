@@ -1,0 +1,28 @@
+<h1 mat-dialog-title style="text-align:center;"> {{ project.name }} </h1>
+<div mat-dialog-content>
+    <mat-tab-group mat-align-tabs="start">
+      <mat-tab label="Overview">
+        <img class="imgClass" src="{{project.imgname}}" alt="Project image">
+        <p class="about-block"> {{ project.about }} </p>
+        <p style="font-weight:bold;"> MahaRERA Registration Number : {{ project.registrationNumber }} </p>
+      </mat-tab>
+      <mat-tab label="Amenities">
+        <div style="padding:1%;">
+        <div *ngFor="let amenity of project.amenities; let i = index">
+          <ul style="margin:0px !important;"> 
+            <li> {{ amenity }} </li> <br>
+          </ul>
+        </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Gallery">
+        <div *ngFor="let gallery of project.gallery;">
+            <img class="imgClass" src="{{gallery}}" alt="Project image">
+        </div>
+
+      </mat-tab>
+    </mat-tab-group>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onOkClick()" style="border: 1px solid grey;">Go Back</button>
+</div>

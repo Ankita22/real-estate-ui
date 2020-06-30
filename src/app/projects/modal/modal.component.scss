@@ -1,0 +1,23 @@
+// .imgClass {
+//   width: 100%;
+//   height: 100%;
+//   border: 1px solid white;
+//   display: block;
+// }
+
+.imgClass {
+  width: 45%;
+  height: 100%;
+  padding: 1%;
+  border: 1px solid white;
+  display: block;
+  float: left;
+}
+
+.about-block {
+  float: left;
+  word-break: break-word;
+  width: 50%;
+  padding: 1%;
+  text-align: justify;
+}

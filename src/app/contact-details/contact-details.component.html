@@ -1,0 +1,39 @@
+
+<div class="content" role="main">
+    <div class="card-container container-fluid">
+        <header>
+            <h1 style="color:black;">
+            <span style="text-align:center;">
+                We would like to hear from you! <br>
+                Please provide following information <br>
+                for a call back and setting up a site visit appointment. Thank you.
+            </span>
+            </h1>
+        </header>
+          <div class="content">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+              <mat-form-field>
+                <input type="text" formControlName="name" matInput placeholder="Name" required>
+                <mat-icon matSuffix>person</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" formControlName="email" matInput placeholder="Enter your email" required>
+                <mat-icon matSuffix>drafts</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input formControlName="mobile" type="tel" matInput placeholder="Contact Number" required>
+                <mat-icon matSuffix>call</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" formControlName="comments" matInput placeholder="Comments" required>
+                <mat-icon matSuffix>create</mat-icon>
+              </mat-form-field>
+              <!-- <mat-form-field>
+                <textarea matInput placeholder="Textarea" required></textarea>
+                <mat-icon matSuffix>save</mat-icon>
+              </mat-form-field>  [disabled]="!contactForm.valid" -->
+              <button type="submit" [disabled]="!contactForm.valid" mat-raised-button class="btn-custom"> Submit</button>
+            </form>
+          </div>
+    </div>
+</div>

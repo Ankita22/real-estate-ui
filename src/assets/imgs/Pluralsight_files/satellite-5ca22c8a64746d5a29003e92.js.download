@@ -1,0 +1,7 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  var url = document.location.href;
+
+if (url.indexOf(".com/profile") > -1){
+  adobe.target.triggerView("pspageView");
+}
+});
