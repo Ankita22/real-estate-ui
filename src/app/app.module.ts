@@ -15,6 +15,7 @@ import { LoginModalComponent } from "./login/modal/login-modal.component";
 import { MatCarouselModule } from "@ngmodule/material-carousel";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { MatDialogModule } from "@angular/material/dialog";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MatDialogModule } from "@angular/material/dialog";
     LoginComponent,
     ModalComponent,
     LoginModalComponent,
+    DashboardComponent,
   ],
   imports: [
     NgbModule,

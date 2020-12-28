@@ -14,6 +14,7 @@ export class HttpService {
   apiURL: string = "http://localhost:7000/api";
   constructor(private http: HttpClient) {}
 
+  // api to get projects details
   getProjects(): Observable<any> {
     return this.http
       .get(this.apiURL + "/project/getproject")
@@ -25,9 +26,24 @@ export class HttpService {
   //     map(this.extractData));
   // }
 
+  // api to store contact us details
   sendContactData(contactData): Observable<any> {
     return this.http
       .post(this.apiURL + "/contact/addcontact", contactData)
+      .pipe(map(this.extractData));
+  }
+
+  // api to register user
+  registerUser(registerData): Observable<any> {
+    return this.http
+      .post(this.apiURL + "/user/register", registerData)
+      .pipe(map(this.extractData));
+  }
+
+  // api to login user
+  loginUser(loginData): Observable<any> {
+    return this.http
+      .post(this.apiURL + "/user/login", loginData)
       .pipe(map(this.extractData));
   }
 

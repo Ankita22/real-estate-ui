@@ -1,0 +1,34 @@
+
+  
+<div  role="main" class="content">
+    <div class="card-container container-fluid" style="margin-top: 10%;">
+        <header style="text-align:center;">
+            <h1> Welcome to Our Projects Dasboard</h1>
+        </header>
+        <div class="row" class="content">
+            <div class="projectCard">
+                    <div class="row card" style="background-color:#2C3151;"> 
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    
+                                </tr>
+                                <tr>
+                                <td target="_blank" rel="noopener" *ngFor="let project of projectDetails;let i=index;">
+                                    <div *ngFor="let p1 of project.projects;let j=index;" style="width: 100%;">
+                                    <div class="container" (click)="openDialog(p1,i,j)">
+                                        <img src="{{p1.imgname}}" alt="Avatar" class="imgClass">
+                                        <div class="overlay">
+                                            <div class="text"> {{ p1.name }} </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> 
+                </div>   
+        </div>
+    </div>
+</div>

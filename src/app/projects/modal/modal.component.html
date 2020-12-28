@@ -19,10 +19,29 @@
         <div *ngFor="let gallery of project.gallery;">
             <img class="imgClass" src="{{gallery}}" alt="Project image">
         </div>
-
+      </mat-tab>
+      <mat-tab label="Book Now" *ngIf="project.isBookNow">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th> 1 BHK</th>
+              <th> 2 BHK</th>
+              <th> 3 BHK</th>
+            </tr>
+            <tr>
+                  <td *ngFor="let bhk of project.bhks;"> 
+                    Carpet Area - {{ bhk.area}} Sq.Ft. <br/>
+                    Per Sq/ft Price - Rs.{{ bhk.sqft}}/-  <br/>
+                    Total Price - Rs.{{ bhk.area * bhk.sqft }}/-<br/><br/>
+                    <button mat-button (click)="onPurchase()" style="border: 1px solid grey;">Purchase</button>
+                  </td>
+            </tr>
+          </tbody>
+       </table>
       </mat-tab>
     </mat-tab-group>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onOkClick()" style="border: 1px solid grey;">Go Back</button>
+  <button mat-button *ngIf="isUserActive && isProjects" (click)="seeMoreOnPurchase()" style="border: 1px solid grey;">Purchase</button>
 </div>
