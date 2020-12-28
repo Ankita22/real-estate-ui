@@ -1,25 +1,22 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from "../services/http.service";
 import {
   MatDialog,
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
-import { ModalComponent } from "./modal/modal.component";
-import { Router, ActivatedRoute } from '@angular/router';
-import { Route } from '@angular/compiler/src/core';
-
+import { ModalComponent } from "../projects/modal/modal.component";
 
 @Component({
-  selector: "app-projects",
-  templateUrl: "./projects.component.html",
-  styleUrls: ["./projects.component.scss"],
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class ProjectsComponent implements OnInit {
+export class DashboardComponent implements OnInit {
   projectDetails = [];
   email: string;
   name: string;
-  constructor(private httpService: HttpService, public dialog: MatDialog, private router:Router) {}
+  constructor(private httpService: HttpService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.httpService.getProjects().subscribe((data: any) => {
@@ -39,15 +36,15 @@ export class ProjectsComponent implements OnInit {
         project.type = "Upcoming Projects";
         break;
     }
-    console.log("project : ", project);
-    project.isBookNow = false;
+    project.isBookNow = true;
+    console.log("project : ", subInd, " :: ", project);
     const dialogRef = this.dialog.open(ModalComponent, {
       width: "60%",
       data: project,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log("The dialog was closed : ",result);
+      console.log("The dialog was closed");
       this.email = result;
     });
   }

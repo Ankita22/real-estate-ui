@@ -29,8 +29,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   onLogin() {
-    console.log("Here");
-    this.loginComponent.openDialog();
+    console.log("Login called");
+    //this.loginComponent.openDialog();
   }
 
   ngAfterViewInit(): void {

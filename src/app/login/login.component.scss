@@ -1,5 +1,14 @@
 
 
-  ::ng-deep .mat-button.mat-accent, .mat-icon-button.mat-accent, .mat-stroked-button.mat-accent{
+::ng-deep .mat-button.mat-accent, .mat-icon-button.mat-accent, .mat-stroked-button.mat-accent{
     color:white !important;
+}
+
+::ng-deep .btn-primary{
+  background-color:#2C3151 !important;
+  margin: 2% !important;
+}
+
+::ng-deep .mat-dialog-content{
+overflow: hidden;
 }

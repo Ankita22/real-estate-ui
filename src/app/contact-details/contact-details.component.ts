@@ -14,7 +14,7 @@ export class ContactDetailsComponent implements OnInit {
     this.contactForm = new FormGroup({
       name: new FormControl(),
       email: new FormControl(),
-      mobile: new FormControl(),
+      mobileNumber: new FormControl(),
       comments: new FormControl(),
     });
   }

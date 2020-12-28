@@ -11,7 +11,8 @@
     <a class="urls" href="#home">Home</a> |  
     <a class="urls" href="#projects">Projects</a> | 
     <a class="urls" href="#contact">Contact Us</a> |
-    <a class="urls" href="#login">Login</a>
+    <a class="urls" (click)="openDialog(false)" *ngIf="!isUserLoggedIn">Login</a>
+    <span *ngIf="isUserLoggedIn" (click)="openDialog(true)"> Welcome {{ userDetails.firstname }}! </span>
   </div>
 
 </mat-toolbar>
